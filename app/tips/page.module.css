@@ -1,0 +1,27 @@
+.header {
+    margin-bottom: var(--spacing-3xl);
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-4xl);
+    margin: 0 0 var(--spacing-sm) 0;
+}
+
+.icon {
+    font-size: var(--font-size-4xl);
+}
+
+.subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: var(--font-size-3xl);
+    }
+}

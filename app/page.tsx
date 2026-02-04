@@ -1,65 +1,61 @@
-import Image from "next/image";
+import Link from 'next/link';
+import styles from './page.module.css';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className={styles.hero}>
+      <div className={styles.heroGradient} />
+
+      <div className="container">
+        <div className={styles.heroContent}>
+          <h1 className={styles.heroTitle}>
+            AI 시대의 필수 정보
+            <br />
+            <span className="gradient-text">한 눈에</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          <p className={styles.heroSubtitle}>
+            매일 쏟아지는 AI 뉴스, 활용 팁, 교육 프로그램을
+            <br />
+            간편하게 찾아보세요
           </p>
+
+          <div className={styles.ctaButtons}>
+            <Link href="/news" className="btn btn-primary">
+              🚀 AI 새소식 보기
+            </Link>
+            <Link href="/tips" className="btn btn-secondary">
+              💡 활용법 알아보기
+            </Link>
+          </div>
+
+          <div className={styles.features}>
+            <div className={`glass-card ${styles.featureCard}`}>
+              <div className={styles.featureIcon}>📰</div>
+              <h3>실시간 AI 뉴스</h3>
+              <p>국내외 최신 AI 소식과 AI 요약을 한번에</p>
+            </div>
+
+            <div className={`glass-card ${styles.featureCard}`}>
+              <div className={styles.featureIcon}>💡</div>
+              <h3>AI 활용 팁</h3>
+              <p>ChatGPT, Midjourney 등 AI 도구 활용법</p>
+            </div>
+
+            <div className={`glass-card ${styles.featureCard}`}>
+              <div className={styles.featureIcon}>🎓</div>
+              <h3>교육 프로그램</h3>
+              <p>국비지원 과정부터 전문가 과정까지</p>
+            </div>
+
+            <div className={`glass-card ${styles.featureCard}`}>
+              <div className={styles.featureIcon}>⭐</div>
+              <h3>북마크 기능</h3>
+              <p>관심 있는 콘텐츠를 저장하고 관리</p>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </div>
     </div>
   );
 }
