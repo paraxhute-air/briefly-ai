@@ -165,7 +165,31 @@ html[data-theme='dark'] .mobileNavLink:active {
     background-color: rgba(255, 255, 255, 0.05);
 }
 
+.mobileHeader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--navbar-height);
+    background: var(--bg-navbar);
+    backdrop-filter: blur(var(--blur-md));
+    border-bottom: 1px solid var(--border-navbar);
+    z-index: 1000;
+    padding: 0 var(--spacing-lg);
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+}
+
 @media (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+
+    .mobileHeader {
+        display: flex;
+    }
+
     .mobileNav {
         display: flex;
     }

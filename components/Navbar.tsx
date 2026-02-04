@@ -44,6 +44,15 @@ export default function Navbar() {
                 </div>
             </nav>
 
+            {/* 모바일 상단 헤더 */}
+            <header className={styles.mobileHeader}>
+                <Link href="/" className={styles.logo}>
+                    <span className={styles.logoIcon}>🤖</span>
+                    <span className={styles.logoText}>briefly-ai</span>
+                </Link>
+                <ThemeToggle />
+            </header>
+
             {/* 모바일 하단 네비게이션 */}
             <nav className={styles.mobileNav}>
                 {navItems.map((item) => (

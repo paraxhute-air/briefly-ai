@@ -9,19 +9,27 @@
     transition: background-color 0.2s ease;
     color: var(--text-primary);
     background-color: transparent;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: none;
 }
 
-html[data-theme='dark'] .toggleBtn {
-    border: 1px solid rgba(255, 255, 255, 0.2);
+/* CSS Modules에서 global class (.dark)를 참조하기 위해 :global 사용 */
+:global(.dark) .label {
+    color: #7C3AED;
+}
+
+:global(.dark) .toggleBtn {
+    border: none;
+    color: #7C3AED;
+    /* Match Moon Icon (Purple 600) */
 }
 
 .toggleBtn:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
-html[data-theme='dark'] .toggleBtn:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+:global(.dark) .toggleBtn:hover {
+    background-color: rgba(139, 92, 246, 0.15);
+    color: #c084fc;
 }
 
 .icon {
@@ -34,18 +42,28 @@ html[data-theme='dark'] .toggleBtn:hover {
     font-weight: 500;
 }
 
+@media (max-width: 768px) {
+    .label {
+        display: none;
+    }
+
+    .toggleBtn {
+        padding: 8px;
+    }
+}
+
 .sunIcon {
     color: #eab308;
     /* Yellow-500 */
 }
 
 .moonIcon {
-    color: #cbd5e1;
-    /* Slate-300 */
+    color: #7C3AED;
+    /* Purple-600 */
 }
 
 html[data-theme='dark'] .moonIcon {
-    color: #cbd5e1;
+    color: #7C3AED;
 }
 
 .skeleton {
@@ -56,7 +74,7 @@ html[data-theme='dark'] .moonIcon {
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-html[data-theme='dark'] .skeleton {
+:global(.dark) .skeleton {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
