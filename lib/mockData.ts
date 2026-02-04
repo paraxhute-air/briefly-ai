@@ -1,7 +1,11 @@
 import { NewsArticle, VideoTip, EducationProgram } from './types';
 
-// AI 뉴스 목업 데이터
-export const mockNewsArticles: NewsArticle[] = [
+/* ------------------------------------------------------------------
+ * Seed (원본 데이터)
+ * ------------------------------------------------------------------ */
+
+// AI 뉴스 Seed
+const BASE_NEWS: NewsArticle[] = [
     {
         id: 'news-1',
         title: 'OpenAI, GPT-5 개발 공식 발표... 2026년 출시 예정',
@@ -87,8 +91,8 @@ export const mockNewsArticles: NewsArticle[] = [
     },
 ];
 
-// YouTube AI 활용 팁 목업 데이터
-export const mockVideoTips: VideoTip[] = [
+// AI 활용법(비디오) Seed
+const BASE_VIDEO: VideoTip[] = [
     {
         id: 'video-1',
         title: 'ChatGPT로 생산성 10배 올리는 프롬프트 엔지니어링',
@@ -151,8 +155,8 @@ export const mockVideoTips: VideoTip[] = [
     },
 ];
 
-// AI 교육 프로그램 목업 데이터
-export const mockEducationPrograms: EducationProgram[] = [
+// AI 교육 프로그램 Seed
+const BASE_EDU: EducationProgram[] = [
     {
         id: 'edu-1',
         name: 'AI 프롬프트 엔지니어링 실무 과정',
@@ -231,3 +235,42 @@ export const mockEducationPrograms: EducationProgram[] = [
         link: '#',
     },
 ];
+
+/* ------------------------------------------------------------------
+ * Utils: 배열을 "총 N개"로 확장 (순환 복제 + id 유니크)
+ * ------------------------------------------------------------------ */
+
+function expandToCount<T extends { id: string }>(
+    base: T[],
+    targetCount: number,
+    idPrefix: string,
+    labelKey?: keyof T
+): T[] {
+    if (base.length === 0) return [];
+
+    return Array.from({ length: targetCount }, (_, i) => {
+        const src = base[i % base.length];
+
+        // ✅ React key, 북마크 등 충돌 방지를 위해 id를 무조건 유니크하게 생성
+        const newId = `${idPrefix}-${i + 1}`;
+
+        const withLabel =
+            labelKey && typeof src[labelKey] === 'string'
+                ? { [labelKey]: `${String(src[labelKey])} (${i + 1})` }
+                : {};
+
+        return {
+            ...src,
+            ...withLabel,
+            id: newId,
+        };
+    });
+}
+
+/* ------------------------------------------------------------------
+ * Final Exports: 각각 "총 20개"
+ * ------------------------------------------------------------------ */
+
+export const mockNewsArticles: NewsArticle[] = expandToCount(BASE_NEWS, 20, 'news', 'title');
+export const mockVideoTips: VideoTip[] = expandToCount(BASE_VIDEO, 20, 'video', 'title');
+export const mockEducationPrograms: EducationProgram[] = expandToCount(BASE_EDU, 20, 'edu', 'name');

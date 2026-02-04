@@ -4,9 +4,9 @@
     left: 0;
     right: 0;
     height: var(--navbar-height);
-    background: rgba(15, 23, 42, 0.8);
+    background: var(--bg-navbar);
     backdrop-filter: blur(var(--blur-md));
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--border-navbar);
     z-index: 1000;
 }
 
@@ -107,9 +107,9 @@
     left: 0;
     right: 0;
     height: var(--mobile-nav-height);
-    background: rgba(15, 23, 42, 0.95);
+    background: var(--bg-navbar);
     backdrop-filter: blur(var(--blur-md));
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--border-navbar);
     display: flex;
     justify-content: space-around;
     align-items: center;

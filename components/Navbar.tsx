@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import styles from './Navbar.module.css';
+import ThemeToggle from './ThemeToggle';
 
 export default function Navbar() {
     const pathname = usePathname();
@@ -37,6 +38,9 @@ export default function Navbar() {
                             </li>
                         ))}
                     </ul>
+                    <div className="hidden-mobile" style={{ marginLeft: '1rem' }}>
+                        <ThemeToggle />
+                    </div>
                 </div>
             </nav>
 

@@ -6,7 +6,7 @@ import LoadMore from '@/components/LoadMore';
 import { mockVideoTips } from '@/lib/mockData';
 import styles from './page.module.css';
 
-const ITEMS_PER_PAGE = 6;
+const ITEMS_PER_PAGE = 20;
 
 export default function TipsPage() {
     const [displayCount, setDisplayCount] = useState(ITEMS_PER_PAGE);

@@ -9,23 +9,26 @@ export default function Home() {
       <div className="container">
         <div className={styles.heroContent}>
           <h1 className={styles.heroTitle}>
-            AI 시대의 필수 정보
+            AI 시대의 필수 정보를
             <br />
-            <span className="gradient-text">한 눈에</span>
+            <span className="gradient-text">빠르고 간편하게</span>
           </h1>
 
           <p className={styles.heroSubtitle}>
             매일 쏟아지는 AI 뉴스, 활용 팁, 교육 프로그램을
             <br />
-            간편하게 찾아보세요
+            편리하게 찾아보세요
           </p>
 
           <div className={styles.ctaButtons}>
             <Link href="/news" className="btn btn-primary">
-              🚀 AI 새소식 보기
+              📰 AI 새소식 보기
             </Link>
             <Link href="/tips" className="btn btn-secondary">
-              💡 활용법 알아보기
+              💡 AI 활용법 보기
+            </Link>
+            <Link href="/education" className="btn btn-secondary">
+              🎓 AI 교육프로그램 보기
             </Link>
           </div>
 

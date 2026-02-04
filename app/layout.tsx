@@ -4,6 +4,7 @@ import { BookmarkProvider } from '@/context/BookmarkContext';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import '@/styles/globals.css';
+import { Providers } from './providers';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk' });
@@ -20,19 +21,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ko" className={`${inter.variable} ${spaceGrotesk.variable}`}>
+    <html lang="ko" className={`${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body>
-        <BookmarkProvider>
-          <Navbar />
-          <main className="page-wrapper">
-            {children}
-          </main>
-          <Footer />
-        </BookmarkProvider>
+        <Providers>
+          <BookmarkProvider>
+            <Navbar />
+            <main className="page-wrapper">
+              {children}
+            </main>
+            <Footer />
+          </BookmarkProvider>
+        </Providers>
       </body>
     </html>
   );

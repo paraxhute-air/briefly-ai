@@ -7,7 +7,7 @@ import { mockNewsArticles } from '@/lib/mockData';
 import { NewsArticle } from '@/lib/types';
 import styles from './page.module.css';
 
-const ITEMS_PER_PAGE = 6;
+const ITEMS_PER_PAGE = 20;
 
 export default function NewsPage() {
     const [filter, setFilter] = useState<'all' | 'domestic' | 'international'>('all');

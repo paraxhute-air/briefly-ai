@@ -1,0 +1,73 @@
+.toggleBtn {
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    color: var(--text-primary);
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+html[data-theme='dark'] .toggleBtn {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.toggleBtn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+html[data-theme='dark'] .toggleBtn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.sunIcon {
+    color: #eab308;
+    /* Yellow-500 */
+}
+
+.moonIcon {
+    color: #cbd5e1;
+    /* Slate-300 */
+}
+
+html[data-theme='dark'] .moonIcon {
+    color: #cbd5e1;
+}
+
+.skeleton {
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+html[data-theme='dark'] .skeleton {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .5;
+    }
+}

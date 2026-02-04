@@ -7,7 +7,7 @@ import { mockEducationPrograms } from '@/lib/mockData';
 import { EducationProgram } from '@/lib/types';
 import styles from './page.module.css';
 
-const ITEMS_PER_PAGE = 6;
+const ITEMS_PER_PAGE = 20;
 
 export default function EducationPage() {
     const [filter, setFilter] = useState<'all' | 'short-term' | 'long-term' | 'government-funded' | 'general'>('all');
