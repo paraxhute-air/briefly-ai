@@ -243,8 +243,7 @@ const BASE_EDU: EducationProgram[] = [
 function expandToCount<T extends { id: string }>(
     base: T[],
     targetCount: number,
-    idPrefix: string,
-    labelKey?: keyof T
+    idPrefix: string
 ): T[] {
     if (base.length === 0) return [];
 
@@ -254,14 +253,8 @@ function expandToCount<T extends { id: string }>(
         // ✅ React key, 북마크 등 충돌 방지를 위해 id를 무조건 유니크하게 생성
         const newId = `${idPrefix}-${i + 1}`;
 
-        const withLabel =
-            labelKey && typeof src[labelKey] === 'string'
-                ? { [labelKey]: `${String(src[labelKey])} (${i + 1})` }
-                : {};
-
         return {
             ...src,
-            ...withLabel,
             id: newId,
         };
     });
@@ -271,6 +264,6 @@ function expandToCount<T extends { id: string }>(
  * Final Exports: 각각 "총 20개"
  * ------------------------------------------------------------------ */
 
-export const mockNewsArticles: NewsArticle[] = expandToCount(BASE_NEWS, 20, 'news', 'title');
-export const mockVideoTips: VideoTip[] = expandToCount(BASE_VIDEO, 20, 'video', 'title');
-export const mockEducationPrograms: EducationProgram[] = expandToCount(BASE_EDU, 20, 'edu', 'name');
+export const mockNewsArticles: NewsArticle[] = expandToCount(BASE_NEWS, 20, 'news');
+export const mockVideoTips: VideoTip[] = expandToCount(BASE_VIDEO, 20, 'video');
+export const mockEducationPrograms: EducationProgram[] = expandToCount(BASE_EDU, 20, 'edu');
