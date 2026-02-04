@@ -24,10 +24,10 @@ export default function Home() {
             <Link href="/news" className="btn btn-primary">
               📰 AI 새소식 보기
             </Link>
-            <Link href="/tips" className="btn btn-secondary">
+            <Link href="/tips" className="btn btn-primary">
               💡 AI 활용법 보기
             </Link>
-            <Link href="/education" className="btn btn-secondary">
+            <Link href="/education" className="btn btn-primary">
               🎓 AI 교육프로그램 보기
             </Link>
           </div>

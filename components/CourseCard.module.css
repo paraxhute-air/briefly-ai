@@ -3,10 +3,14 @@
     flex-direction: column;
     overflow: hidden;
     height: 100%;
+    position: relative;
+    padding-top: var(--spacing-2xl);
+    /* 상단 뱃지와 북마크 영역 확보 */
 }
 
 .content {
     padding: var(--spacing-lg);
+    /* padding-top: 0; 제거 */
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -21,6 +25,9 @@
 }
 
 .typeBadge {
+    position: absolute;
+    top: var(--spacing-md);
+    left: var(--spacing-md);
     display: inline-block;
     padding: var(--spacing-xs) var(--spacing-sm);
     border-radius: var(--radius-full);
@@ -29,7 +36,9 @@
     color: white;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: 0;
+    box-shadow: var(--shadow-sm);
+    z-index: 10;
 }
 
 .title {
@@ -41,11 +50,21 @@
 }
 
 .bookmarkBtn {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    z-index: 10;
     font-size: 24px;
-    padding: var(--spacing-xs);
-    border-radius: var(--radius-md);
+    padding: 2px;
+    border-radius: var(--radius-full);
     transition: all var(--transition-base);
-    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    /* CourseCard는 배경색이 없으므로 연하게 */
 }
 
 .bookmarkBtn:hover {

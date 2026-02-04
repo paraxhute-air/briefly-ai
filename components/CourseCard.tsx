@@ -36,24 +36,25 @@ export default function CourseCard({ course }: CourseCardProps) {
 
     return (
         <article className={`glass-card ${styles.card}`}>
+            {/* 상단 뱃지와 북마크 */}
+            <span
+                className={styles.typeBadge}
+                style={{ background: typeColors[course.type] }}
+            >
+                {typeLabels[course.type]}
+            </span>
+
+            <button
+                onClick={toggleBookmark}
+                className={`${styles.bookmarkBtn} ${bookmarked ? styles.bookmarked : ''}`}
+                aria-label="북마크"
+            >
+                {bookmarked ? '⭐' : '☆'}
+            </button>
+
             <div className={styles.content}>
                 <div className={styles.header}>
-                    <div>
-                        <span
-                            className={styles.typeBadge}
-                            style={{ background: typeColors[course.type] }}
-                        >
-                            {typeLabels[course.type]}
-                        </span>
-                        <h3 className={styles.title}>{course.name}</h3>
-                    </div>
-                    <button
-                        onClick={toggleBookmark}
-                        className={`${styles.bookmarkBtn} ${bookmarked ? styles.bookmarked : ''}`}
-                        aria-label="북마크"
-                    >
-                        {bookmarked ? '⭐' : '☆'}
-                    </button>
+                    <h3 className={styles.title}>{course.name}</h3>
                 </div>
 
                 <p className={styles.description}>{course.description}</p>

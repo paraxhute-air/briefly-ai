@@ -3,20 +3,26 @@
 import { useState } from 'react';
 import NewsCard from '@/components/NewsCard';
 import LoadMore from '@/components/LoadMore';
+import SearchBar from '@/components/SearchBar';
 import { mockNewsArticles } from '@/lib/mockData';
 import { NewsArticle } from '@/lib/types';
 import styles from './page.module.css';
 
-const ITEMS_PER_PAGE = 20;
+const ITEMS_PER_PAGE = 6;
 
 export default function NewsPage() {
     const [filter, setFilter] = useState<'all' | 'domestic' | 'international'>('all');
     const [displayCount, setDisplayCount] = useState(ITEMS_PER_PAGE);
     const [loading, setLoading] = useState(false);
+    const [searchQuery, setSearchQuery] = useState('');
 
-    const filteredArticles = filter === 'all'
-        ? mockNewsArticles
-        : mockNewsArticles.filter((article) => article.category === filter);
+    const filteredArticles = mockNewsArticles.filter((article) => {
+        const matchCategory = filter === 'all' || article.category === filter;
+        const matchSearch = article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            article.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            article.source.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchCategory && matchSearch;
+    });
 
     const displayedArticles = filteredArticles.slice(0, displayCount);
     const hasMore = displayCount < filteredArticles.length;
@@ -73,6 +79,15 @@ export default function NewsPage() {
                         </button>
                     </div>
                 </div>
+
+                <SearchBar
+                    value={searchQuery}
+                    onChange={(val) => {
+                        setSearchQuery(val);
+                        setDisplayCount(ITEMS_PER_PAGE);
+                    }}
+                    placeholder="뉴스 제목이나 내용을 검색해보세요..."
+                />
 
                 <div className="grid grid-cols-3">
                     {displayedArticles.map((article, index) => (

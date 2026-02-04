@@ -4,6 +4,7 @@ import { NewsArticle } from '@/lib/types';
 import { useBookmark } from '@/context/BookmarkContext';
 import styles from './NewsCard.module.css';
 import { useState } from 'react';
+import Link from 'next/link';
 
 interface NewsCardProps {
     article: NewsArticle;
@@ -33,16 +34,17 @@ export default function NewsCard({ article }: NewsCardProps) {
                 </div>
             )}
 
+            <button
+                onClick={toggleBookmark}
+                className={`${styles.bookmarkBtn} ${bookmarked ? styles.bookmarked : ''}`}
+                aria-label="북마크"
+            >
+                {bookmarked ? '⭐' : '☆'}
+            </button>
+
             <div className={styles.content}>
                 <div className={styles.header}>
                     <h3 className={styles.title}>{article.title}</h3>
-                    <button
-                        onClick={toggleBookmark}
-                        className={`${styles.bookmarkBtn} ${bookmarked ? styles.bookmarked : ''}`}
-                        aria-label="북마크"
-                    >
-                        {bookmarked ? '⭐' : '☆'}
-                    </button>
                 </div>
 
                 <p className={styles.summary}>{article.summary}</p>
@@ -70,8 +72,14 @@ export default function NewsCard({ article }: NewsCardProps) {
                 )}
 
                 <div className={styles.footer}>
-                    <span className={styles.source}>{article.source}</span>
-                    <span className={styles.date}>{article.date}</span>
+                    <div className={styles.metaInfo}>
+                        <span className={styles.source}>{article.source}</span>
+                        <span className={styles.divider}>•</span>
+                        <span className={styles.date}>{article.date}</span>
+                    </div>
+                    <Link href={`/article/${article.id}`} className={styles.linkBtn}>
+                        기사 원문 보기 🔗
+                    </Link>
                 </div>
             </div>
         </article>

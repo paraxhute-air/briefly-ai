@@ -32,6 +32,7 @@
     padding: var(--spacing-2xl) 0;
     color: var(--color-text-muted);
     font-size: var(--font-size-lg);
+    opacity: 0.7;
 }
 
 .endMessage p {

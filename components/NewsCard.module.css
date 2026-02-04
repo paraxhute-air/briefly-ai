@@ -3,6 +3,7 @@
     flex-direction: column;
     overflow: hidden;
     height: 100%;
+    position: relative;
 }
 
 .imageWrapper {
@@ -26,8 +27,9 @@
 .categoryBadge {
     position: absolute;
     top: var(--spacing-md);
-    right: var(--spacing-md);
+    left: var(--spacing-md);
     z-index: 1;
+    box-shadow: var(--shadow-sm);
 }
 
 .content {
@@ -55,11 +57,22 @@
 }
 
 .bookmarkBtn {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    z-index: 10;
     font-size: 24px;
     padding: var(--spacing-xs);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-full);
     transition: all var(--transition-base);
-    flex-shrink: 0;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    backdrop-filter: blur(4px);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .bookmarkBtn:hover {
@@ -149,4 +162,34 @@
 .source {
     font-weight: 600;
     color: var(--color-accent);
+}
+
+.metaInfo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+}
+
+.divider {
+    opacity: 0.5;
+}
+
+.linkBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.05);
+    transition: all var(--transition-base);
+}
+
+.linkBtn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-text-primary);
 }

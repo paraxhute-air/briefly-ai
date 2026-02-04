@@ -30,16 +30,17 @@ export default function VideoCard({ video }: VideoCardProps) {
                 <span className={styles.duration}>{video.duration}</span>
             </a>
 
+            <button
+                onClick={toggleBookmark}
+                className={`${styles.bookmarkBtn} ${bookmarked ? styles.bookmarked : ''}`}
+                aria-label="북마크"
+            >
+                {bookmarked ? '⭐' : '☆'}
+            </button>
+
             <div className={styles.content}>
                 <div className={styles.header}>
                     <h3 className={styles.title}>{video.title}</h3>
-                    <button
-                        onClick={toggleBookmark}
-                        className={`${styles.bookmarkBtn} ${bookmarked ? styles.bookmarked : ''}`}
-                        aria-label="북마크"
-                    >
-                        {bookmarked ? '⭐' : '☆'}
-                    </button>
                 </div>
 
                 <div className={styles.meta}>

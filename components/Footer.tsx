@@ -10,7 +10,7 @@ export default function Footer() {
                         briefly-ai
                     </h3>
                     <p className={styles.footerDesc}>
-                        AI 시대의 필수 정보를 한 눈에
+                        AI 시대의 필수 정보를 한 눈에 빠르고 간편하게!
                     </p>
                 </div>
 

@@ -45,7 +45,7 @@ export default function Navbar() {
             </nav>
 
             {/* 모바일 하단 네비게이션 */}
-            <nav className={`${styles.mobileNav} hidden-desktop`}>
+            <nav className={styles.mobileNav}>
                 {navItems.map((item) => (
                     <Link
                         key={item.path}

@@ -3,6 +3,7 @@
     flex-direction: column;
     overflow: hidden;
     height: 100%;
+    position: relative;
 }
 
 .thumbnailWrapper {
@@ -102,11 +103,22 @@
 }
 
 .bookmarkBtn {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    z-index: 10;
     font-size: 24px;
     padding: var(--spacing-xs);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-full);
     transition: all var(--transition-base);
-    flex-shrink: 0;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    backdrop-filter: blur(4px);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .bookmarkBtn:hover {

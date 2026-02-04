@@ -106,60 +106,67 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: var(--mobile-nav-height);
+    height: calc(var(--mobile-nav-height) + env(safe-area-inset-bottom));
     background: var(--bg-navbar);
     backdrop-filter: blur(var(--blur-md));
     border-top: 1px solid var(--border-navbar);
-    display: flex;
-    justify-content: space-around;
+    display: none;
     align-items: center;
+    padding-bottom: env(safe-area-inset-bottom);
     z-index: 1000;
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .mobileNavLink {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2px;
-    padding: var(--spacing-xs);
-    color: var(--color-text-muted);
+    height: 100%;
+    gap: 4px;
+    color: var(--text-muted);
     transition: all var(--transition-base);
-    min-width: 70px;
     position: relative;
+    padding: 8px 0;
 }
 
 .mobileNavIcon {
     font-size: 24px;
-    transition: transform var(--transition-base);
+    transition: transform var(--transition-base), color var(--transition-base);
 }
 
 .mobileNavLabel {
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 500;
-}
-
-.mobileNavLink:active .mobileNavIcon {
-    transform: scale(0.9);
+    transition: color var(--transition-base);
 }
 
 .mobileNavLink.mobileActive {
-    color: var(--color-primary-light);
-}
-
-.mobileNavLink.mobileActive::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 3px;
-    background: var(--gradient-primary);
-    border-radius: 0 0 var(--radius-full) var(--radius-full);
+    color: var(--color-primary);
 }
 
 .mobileNavLink.mobileActive .mobileNavIcon {
-    transform: scale(1.1);
+    transform: translateY(-2px);
+    color: var(--color-primary);
+}
+
+.mobileNavLink.mobileActive .mobileNavLabel {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+/* 터치 피드백 */
+.mobileNavLink:active {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+html[data-theme='dark'] .mobileNavLink:active {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 768px) {
+    .mobileNav {
+        display: flex;
+    }
 }

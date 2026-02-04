@@ -1,0 +1,60 @@
+.searchContainer {
+    margin-bottom: var(--spacing-xl);
+    display: flex;
+    justify-content: flex-start;
+}
+
+.searchWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.searchIcon {
+    position: absolute;
+    left: var(--spacing-md);
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: var(--font-size-lg);
+    color: var(--text-muted);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.searchInput {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    padding-left: var(--spacing-2xl);
+    /* 아이콘 공간 확보 */
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(var(--blur-sm));
+    font-size: var(--font-size-base);
+    color: var(--text-primary);
+    transition: all var(--transition-base);
+    height: 48px;
+}
+
+.searchInput:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.8);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+.searchInput::placeholder {
+    color: var(--text-muted);
+}
+
+/* 다크 모드 스타일 */
+:global(.dark) .searchInput {
+    background: rgba(30, 41, 59, 0.5);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+}
+
+:global(.dark) .searchInput:focus {
+    background: rgba(30, 41, 59, 0.8);
+    border-color: var(--color-primary);
+}
