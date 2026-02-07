@@ -48,6 +48,7 @@ const BASE_NEWS: NewsArticle[] = [
         category: 'domestic',
         url: '#',
         imageUrl: 'https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=800',
+        aiSummary: '삼성전자의 10조원 투자는 AGI 칩 개발을 가속화하고 메모리 반도체 리더십을 공고히 할 것입니다.',
     },
     {
         id: 'news-5',
@@ -58,6 +59,7 @@ const BASE_NEWS: NewsArticle[] = [
         category: 'international',
         url: '#',
         imageUrl: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800',
+        aiSummary: 'Meta의 새로운 모델인 SeamlessM4T는 음성과 텍스트를 아우르는 통합 번역 기능을 제공합니다.',
     },
     {
         id: 'news-6',
@@ -68,6 +70,7 @@ const BASE_NEWS: NewsArticle[] = [
         category: 'domestic',
         url: '#',
         imageUrl: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800',
+        aiSummary: 'LG AI연구원의 엑사원(EXAONE) 기반 자율주행 기술은 악천후 환경에서도 높은 인식률을 자랑합니다.',
     },
     {
         id: 'news-7',
@@ -78,6 +81,7 @@ const BASE_NEWS: NewsArticle[] = [
         category: 'international',
         url: '#',
         imageUrl: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800',
+        aiSummary: 'Copilot 업그레이드는 상황 인식 능력이 강화되어 복잡한 코드 리팩토링도 자동화할 수 있습니다.',
     },
     {
         id: 'news-8',
@@ -88,6 +92,7 @@ const BASE_NEWS: NewsArticle[] = [
         category: 'domestic',
         url: '#',
         imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800',
+        aiSummary: '카카오 헬스케어의 \'파스타\' 앱은 연속혈당측정기(CGM)와 연동되어 실시간 건강 관리를 돕습니다.',
     },
 ];
 
@@ -232,6 +237,28 @@ const BASE_EDU: EducationProgram[] = [
         description: '데이터 수집, 전처리, AI 모델 학습, 시각화까지 전 과정을 다룹니다.',
         startDate: '2026-03-20',
         fee: '1,500,000원',
+        link: '#',
+    },
+    {
+        id: 'edu-8',
+        name: '실무자가 알려주는 AI 마케팅 VOD',
+        type: 'vod',
+        duration: '5시간 30분',
+        institution: '패스트캠퍼스',
+        description: '마케팅 현직자가 알려주는 AI 툴 활용법과 카피라이팅 자동화 노하우.',
+        startDate: '상시 수강',
+        fee: '120,000원',
+        link: '#',
+    },
+    {
+        id: 'edu-9',
+        name: 'LangChain으로 나만의 AI 앱 만들기',
+        type: 'vod',
+        duration: '8시간',
+        institution: '인프런',
+        description: 'LangChain 프레임워크를 활용하여 RAG 기반의 AI 애플리케이션을 구축합니다.',
+        startDate: '상시 수강',
+        fee: '88,000원',
         link: '#',
     },
 ];

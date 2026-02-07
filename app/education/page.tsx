@@ -11,7 +11,7 @@ import styles from './page.module.css';
 const ITEMS_PER_PAGE = 6;
 
 export default function EducationPage() {
-    const [filter, setFilter] = useState<'all' | 'short-term' | 'long-term' | 'government-funded' | 'general'>('all');
+    const [filter, setFilter] = useState<'all' | 'short-term' | 'long-term' | 'government-funded' | 'general' | 'vod'>('all');
     const [displayCount, setDisplayCount] = useState(ITEMS_PER_PAGE);
     const [loading, setLoading] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
@@ -85,6 +85,15 @@ export default function EducationPage() {
                             }}
                         >
                             장기
+                        </button>
+                        <button
+                            className={`${styles.filterBtn} ${filter === 'vod' ? styles.active : ''}`}
+                            onClick={() => {
+                                setFilter('vod');
+                                setDisplayCount(ITEMS_PER_PAGE);
+                            }}
+                        >
+                            VOD
                         </button>
                     </div>
                 </div>

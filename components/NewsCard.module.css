@@ -9,7 +9,7 @@
 .imageWrapper {
     position: relative;
     width: 100%;
-    height: 200px;
+    height: 150px; /* Reduced from 200px */
     overflow: hidden;
 }
 
@@ -26,34 +26,41 @@
 
 .categoryBadge {
     position: absolute;
-    top: var(--spacing-md);
-    left: var(--spacing-md);
+    top: var(--spacing-sm);
+    left: var(--spacing-sm);
     z-index: 1;
     box-shadow: var(--shadow-sm);
+    font-size: 0.7rem;
+    padding: 2px 6px;
 }
 
 .content {
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: var(--spacing-sm);
 }
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-xs);
 }
 
 .title {
     flex: 1;
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-base); /* Reduced from lg */
     font-weight: 600;
     color: var(--color-text-primary);
-    line-height: 1.4;
+    line-height: 1.3;
     margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+    overflow: hidden;
 }
 
 .bookmarkBtn {
@@ -104,10 +111,10 @@
 }
 
 .aiSummary {
-    background: rgba(99, 102, 241, 0.1);
-    border: 1px solid rgba(99, 102, 241, 0.2);
-    border-radius: var(--radius-md);
-    padding: var(--spacing-md);
+    background: rgba(99, 102, 241, 0.05);
+    border: 1px solid rgba(99, 102, 241, 0.1);
+    border-radius: var(--radius-sm);
+    padding: var(--spacing-sm);
     margin-top: auto;
 }
 
@@ -115,33 +122,38 @@
     display: flex;
     align-items: center;
     gap: var(--spacing-xs);
-    font-size: var(--font-size-xs);
+    font-size: 0.7rem;
     font-weight: 600;
     color: var(--color-primary-light);
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: 2px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .aiIcon {
-    font-size: var(--font-size-base);
+    font-size: 0.8rem;
 }
 
 .aiText {
     color: var(--color-text-secondary);
-    font-size: var(--font-size-sm);
-    line-height: 1.5;
+    font-size: 0.75rem; /* Reduced font size */
+    line-height: 1.4;
     margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-clamp: 3;
+    overflow: hidden;
 }
 
 .toggleBtn {
     display: inline-block;
-    margin-top: var(--spacing-sm);
-    padding: var(--spacing-xs) var(--spacing-sm);
-    background: rgba(99, 102, 241, 0.2);
+    margin-top: 2px;
+    padding: 2px 6px;
+    background: rgba(99, 102, 241, 0.1);
     color: var(--color-primary-light);
-    border-radius: var(--radius-sm);
-    font-size: var(--font-size-xs);
+    border-radius: var(--radius-xs);
+    font-size: 0.7rem;
     font-weight: 600;
 }
 

@@ -13,6 +13,7 @@ const typeLabels: Record<string, string> = {
     'long-term': '장기',
     'government-funded': '국비지원',
     'general': '일반',
+    'vod': 'VOD',
 };
 
 const typeColors: Record<string, string> = {
@@ -20,6 +21,7 @@ const typeColors: Record<string, string> = {
     'long-term': '#8b5cf6',
     'government-funded': '#10b981',
     'general': '#f59e0b',
+    'vod': '#ef4444', // Red-500 for VOD
 };
 
 export default function CourseCard({ course }: CourseCardProps) {

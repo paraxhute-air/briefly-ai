@@ -4,17 +4,15 @@
     overflow: hidden;
     height: 100%;
     position: relative;
-    padding-top: var(--spacing-2xl);
-    /* 상단 뱃지와 북마크 영역 확보 */
+    padding-top: var(--spacing-xl); /* Reduced from 2xl */
 }
 
 .content {
-    padding: var(--spacing-lg);
-    /* padding-top: 0; 제거 */
+    padding: var(--spacing-md); /* Reduced from lg */
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: var(--spacing-sm);
 }
 
 .header {
@@ -26,12 +24,12 @@
 
 .typeBadge {
     position: absolute;
-    top: var(--spacing-md);
-    left: var(--spacing-md);
+    top: var(--spacing-sm); /* Reduced spacing */
+    left: var(--spacing-sm);
     display: inline-block;
-    padding: var(--spacing-xs) var(--spacing-sm);
+    padding: 2px 8px; /* Compact padding */
     border-radius: var(--radius-full);
-    font-size: var(--font-size-xs);
+    font-size: 0.7rem;
     font-weight: 700;
     color: white;
     text-transform: uppercase;
@@ -42,29 +40,33 @@
 }
 
 .title {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-base); /* Reduced from lg */
     font-weight: 600;
     color: var(--color-text-primary);
     line-height: 1.3;
     margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+    overflow: hidden;
 }
 
 .bookmarkBtn {
     position: absolute;
-    top: var(--spacing-md);
-    right: var(--spacing-md);
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
     z-index: 10;
-    font-size: 24px;
+    font-size: 20px;
     padding: 2px;
     border-radius: var(--radius-full);
     transition: all var(--transition-base);
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: rgba(255, 255, 255, 0.05);
-    /* CourseCard는 배경색이 없으므로 연하게 */
 }
 
 .bookmarkBtn:hover {
@@ -90,16 +92,21 @@
 
 .description {
     color: var(--color-text-secondary);
-    font-size: var(--font-size-sm);
-    line-height: 1.6;
+    font-size: 0.8rem;
+    line-height: 1.4;
     margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+    overflow: hidden;
 }
 
 .details {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
-    padding: var(--spacing-md);
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columns */
+    gap: var(--spacing-xs);
+    padding: var(--spacing-xs);
     background: rgba(255, 255, 255, 0.03);
     border-radius: var(--radius-md);
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -108,29 +115,33 @@
 .detailItem {
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm);
-    font-size: var(--font-size-sm);
+    gap: 4px; /* Tight gap */
+    font-size: 0.75rem;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .detailIcon {
-    font-size: var(--font-size-lg);
+    font-size: 0.9rem;
     flex-shrink: 0;
 }
 
 .detailText {
     color: var(--color-text-secondary);
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .linkBtn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: var(--spacing-sm) var(--spacing-lg);
+    padding: var(--spacing-xs) var(--spacing-md);
     background: var(--gradient-primary);
     color: white;
     border-radius: var(--radius-md);
     font-weight: 600;
-    font-size: var(--font-size-sm);
+    font-size: 0.8rem;
     text-align: center;
     transition: all var(--transition-base);
     margin-top: auto;

@@ -47,7 +47,7 @@ export default function NewsCard({ article }: NewsCardProps) {
                     <h3 className={styles.title}>{article.title}</h3>
                 </div>
 
-                <p className={styles.summary}>{article.summary}</p>
+
 
                 {article.aiSummary && (
                     <div className={styles.aiSummary}>

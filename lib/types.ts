@@ -25,7 +25,7 @@ export interface VideoTip {
 export interface EducationProgram {
     id: string;
     name: string;
-    type: 'short-term' | 'long-term' | 'government-funded' | 'general';
+    type: 'short-term' | 'long-term' | 'government-funded' | 'general' | 'vod';
     duration: string;
     institution: string;
     description: string;
