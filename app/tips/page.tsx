@@ -36,7 +36,7 @@ export default function TipsPage() {
                 <div className={styles.header}>
                     <h1 className={styles.title}>
                         <span className={styles.icon}>💡</span>
-                        AI 활용법
+                        AI 꿀팁
                     </h1>
                     <p className={styles.subtitle}>
                         AI 도구 활용 팁과 실전 가이드를 영상으로 배워보세요

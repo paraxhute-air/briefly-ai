@@ -9,9 +9,9 @@ export default function Navbar() {
     const pathname = usePathname();
 
     const navItems = [
-        { label: 'AI 새소식', path: '/news', icon: '📰' },
-        { label: 'AI 활용법', path: '/tips', icon: '💡' },
-        { label: 'AI 교육프로그램', path: '/education', icon: '🎓' },
+        { label: 'AI 뉴스', path: '/news', icon: '📰' },
+        { label: 'AI 꿀팁', path: '/tips', icon: '💡' },
+        { label: 'AI 교육', path: '/education', icon: '🎓' },
         { label: '마이페이지', path: '/mypage', icon: '👤' },
     ];
 

@@ -42,7 +42,7 @@ export default function NewsPage() {
                     <div>
                         <h1 className={styles.title}>
                             <span className={styles.icon}>📰</span>
-                            AI 새소식
+                            AI 뉴스
                         </h1>
                         <p className={styles.subtitle}>
                             국내외 최신 AI 뉴스와 AI 요약을 확인하세요

@@ -42,7 +42,7 @@ export default function EducationPage() {
                     <div>
                         <h1 className={styles.title}>
                             <span className={styles.icon}>🎓</span>
-                            AI 교육프로그램
+                            AI 교육
                         </h1>
                         <p className={styles.subtitle}>
                             국비지원부터 전문가 과정까지 다양한 AI 교육 프로그램
